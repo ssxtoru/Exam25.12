@@ -6,14 +6,24 @@ import java.util.Scanner;
 
 public class Inventory {
 
+    private ArrayList<String> allInventory = new ArrayList<>();
 
-    Scanner scanner = new Scanner(System.in);
-
-    String product = scanner.nextLine();
-
-    public Inventory(String product) {
-        this.product = product;
+    public Inventory() {
     }
 
+    public void addToInventory(String nameOfProduct){
+        allInventory.add(nameOfProduct);
+    }
 
+    public void deleteFromInventory(String nameOfProduct){
+        allInventory.remove(nameOfProduct);
+    }
+
+    public boolean checkProductInInventory(String nameOfProduct){
+        return allInventory.contains(nameOfProduct);
+    }
+
+    public ArrayList<String> getAllInventory() {
+        return allInventory;
+    }
 }
